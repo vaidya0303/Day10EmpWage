@@ -2,8 +2,8 @@ package com.bridgelab;
 
 public class EmpWage {
 
-    public static void main(String args[]) {
-
+    public static void calculateTotalWage() {
+        //constant
         final int PART_TIME = 1;
         final int FULL_TIME = 2;
         final int WAGE_PER_HR = 20;
@@ -13,14 +13,15 @@ public class EmpWage {
         int totalWage = 0;
         int workingHrs = 0;
         System.out.printf("%5s     %5s     %5s     %5s\n", "Day", "Workinghrs", "Wage", "Total working hrs");
-          
+
         for (int day = 1, totalWorkingHrs = 0; day <= MAX_WORKING_DAYS
-                && totalWorkingHrs < MAX_WORKING_HRS; day++, totalWorkingHrs += workingHrs){
-        
+                && totalWorkingHrs < MAX_WORKING_HRS; day++, totalWorkingHrs += workingHrs) {
+
             int empType = (int) (Math.random() * 100) % 3;
-              
-            switch (empType){
-          
+            /*
+            using switch statement
+             */
+            switch (empType) {
                 case FULL_TIME:
                     workingHrs = 8;
                     break;
@@ -37,5 +38,10 @@ public class EmpWage {
 
         }
         System.out.println("Total wage for a month is " + totalWage);
+    }
+
+    public static void main(String args[]){
+    
+        calculateTotalWage();
     }
 }
